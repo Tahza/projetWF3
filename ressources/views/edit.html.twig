@@ -1,0 +1,48 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Editer votre image{% endblock %}
+
+{% block contenu %}
+
+    <header class="header">
+        <div class="blocb container-fluid">
+            <div class="row">
+                <div class="col-md-8">
+                    <a href="{{ url('index_index') }}"><img class="logo" src="{{ asset('assets/images/adopte-un-mec.png') }}"></a>
+                </div>
+                <div class="col-md-4">
+
+                    <div class="bouttons right">
+                        <button type="button" class="btn btn-outline-light">Inscription</button>
+                        <button type="button" class="btn btn-outline-light">Connexion</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="edit">
+        <img src="{{ asset('assets/images/1.jpg') }}" id="meme">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8" id="preview"></div>
+                <div class="col-md-4">
+                    <button class="btn btn-success" id="save">Save</button>
+                    <button class="btn btn-danger" id="download">Download</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {% include 'inc/footer.html' %}
+
+{% endblock %}
+
+{% block javascripts %}
+     {{ parent() }}
+    <script src="{{ asset('assets/js/edit.js') }}"></script>
+
+{% endblock %}
