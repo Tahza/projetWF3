@@ -1,0 +1,33 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Administration{% endblock %}
+
+{% block contenu %}
+
+    <header class="header">
+        <div class="blocb container-fluid">
+            <div class="row">
+                <div class="col-md-8">
+                    <a href="{{ url('index_index') }}"><img class="logo" src="{{ asset('assets/images/adopte-un-mec.png') }}"></a>
+                </div>
+                <div class="col-md-4">
+
+                    <div class="bouttons right">
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            <a href="{{ url('index_edit') }}"><button type="button" class="btn btn-outline-light">Mon compte</button></a>
+                            <a href="{{ url('index_deconnexion') }}"><button type="button" class="btn btn-outline-light">Déconnexion</button></a>
+                        {% else %}
+                            <a href="{{ url('index_inscription') }}"><button type="button" class="btn btn-outline-light">Inscription</button></a>
+                            <a href="{{ url('index_connexion') }}"><button type="button" class="btn btn-outline-light">Connexion</button></a>
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    {% include 'inc/footer.html' %}
+
+{% endblock %}

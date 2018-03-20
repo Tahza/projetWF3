@@ -1,0 +1,56 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Editer votre image{% endblock %}
+
+{% block contenu %}
+<!-- -->
+    <header class="header">
+        <div class="blocb container-fluid">
+            <div class="row">
+                <!-- BLOC LOGO -->
+                <div class="col-md-8">
+                    <a href="{{ url('index_index') }}"><img class="logo" src="{{ asset('assets/images/adopte-un-mec.png') }}"></a>
+                </div>
+                <!-- ENDBLOC LOGO -->
+                <!-- BLOC AUTHENTIFACTION -->
+                <div class="col-md-4">
+
+                    <div class="bouttons right">
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            <a href="{{ url('index_membre') }}"><button type="button" class="btn btn-outline-light">Mon compte</button></a>
+                            <a href="{{ url('index_deconnexion') }}"><button type="button" class="btn btn-outline-light">Déconnexion</button></a>
+                        {% else %}
+                            <a href="{{ url('index_inscription') }}"><button type="button" class="btn btn-outline-light">Inscription</button></a>
+                            <a href="{{ url('index_connexion') }}"><button type="button" class="btn btn-outline-light">Connexion</button></a>
+                        {% endif %}
+                    </div>
+
+                </div>
+                <!-- ENDBLOC AUTHENTIFICATION -->
+            </div>
+        </div>
+    </header>
+               <!-- BLOC EDIT -->
+    <div class="edit">
+        <img src="{{ url }}" style="width: {{ width }}px; height: {{ height }}px;" id="meme">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8" id="preview"></div>
+                <div class="col-md-4">
+                    <button class="btn btn-success" id="save">Save</button>
+                    <button style="display: none;" class="btn btn-danger" id="download">Download</button>
+                </div>
+            </div>
+        </div>
+    </div>
+                <!-- ENDBLOC EDIT -->
+    {% include 'inc/footer.html' %}
+
+{% endblock %}
+
+{% block javascripts %}
+     {{ parent() }}
+    <script src="{{ asset('assets/js/edit.js') }}"></script>
+
+{% endblock %}

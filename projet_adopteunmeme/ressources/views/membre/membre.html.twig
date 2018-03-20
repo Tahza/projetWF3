@@ -1,0 +1,56 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Mon compte{% endblock %}
+
+{% block contenu %}
+
+    <header class="header">
+        <div class="blocb container-fluid">
+            <div class="row">
+                <div class="col-md-8">
+                    <a href="{{ url('index_index') }}"><img class="logo"
+                                                            src="{{ asset('assets/images/adopte-un-mec.png') }}"></a>
+                </div>
+                <div class="col-md-4">
+
+                    <div class="bouttons right">
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            <a href="{{ url('index_membre') }}">
+                                <button type="button" class="btn btn-outline-light">Mon compte</button>
+                            </a>
+                            <a href="{{ url('index_deconnexion') }}">
+                                <button type="button" class="btn btn-outline-light">Déconnexion</button>
+                            </a>
+                        {% else %}
+                            <a href="{{ url('index_inscription') }}">
+                                <button type="button" class="btn btn-outline-light">Inscription</button>
+                            </a>
+                            <a href="{{ url('index_connexion') }}">
+                                <button type="button" class="btn btn-outline-light">Connexion</button>
+                            </a>
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container containerp">
+        <img src="{{ asset('assets/images/profile.jpg') }}" class="img-thumbnail social mx-auto d-block" alt="profile">
+        <p class="text-center">{{ app.user.PRENOMMEMBRE }}<br>{{ app.user.NOMMEMBRE }}</p>
+        <h1 class="info">Vos informations :</h1>
+        <div class="social">
+            <a href="{{ url('index_social') }}" class="addsocial">Ajouter vos reseaux sociaux</a>
+            <br>
+            <i class="fab fa-facebook-square"></i>
+            <br>
+            <i class="fab fa-twitter-square"></i>
+            <br>
+            <i class="fab fa-google-plus-square"></i>
+        </div>
+    </div>
+
+    {% include 'inc/footer.html' %}
+
+{% endblock %}

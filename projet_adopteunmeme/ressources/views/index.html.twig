@@ -1,0 +1,88 @@
+{% extends 'layout.html.twig' %}
+
+{# Block de title défini dans base.html.twig #}
+{% block title %}Adopte un meme{% endblock %}
+
+{# Block de Contenu défini dans base.html.twig #}
+{% block contenu %}
+    <!-- BLOC HEADER -->
+    <header class="header">
+        <div class="blocb container-fluid">
+            <div class="row">
+                <div>
+                    <a href="{{ url('index_index') }}"><img class="logo" src="{{ asset('assets/images/adopte-un-mec.png') }}"></a>
+                </div>
+                <div class="col-md-3">
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <!-- BLOC DE ROLE -->
+                    <p class="text-center role">Bonjour {{ app.user.PRENOMMEMBRE }}</p>
+                    <p class="text-center role"><i class="far fa-hand-point-right"></i>
+                    <!-- ENDBLOC DE ROLE -->
+                        {% if is_granted('ROLE_ADMIN') %}
+                            Administrateur
+                        {% elseif is_granted('ROLE_MEMBRE') %}
+                            Membre
+                        {% endif %}
+                    </p>
+                </div>
+                <div class="col-md-2">
+
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <!-- BLOC OPEN GESTION ADMIN -->
+                        <a href="{{ url('admin_admin') }}">
+                            <button type="button" class="btn btn-Admin btn-IC btn-outline-light">Admin</button>
+                        </a>
+                    <!-- ENDBLOC OPEN GESTION ADMIN -->
+                    {% endif %}
+
+                    {% endif %}
+                </div>
+                <!-- BLOC D'AUTHENTIFICATION -->
+                <div class="col-xs-4">
+                    <div class="bouttons-right">
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            <a href="{{ url('index_membre') }}">
+                                <button type="button" class="btn btn-IC btn-outline-light">Mon compte</button>
+                            </a>
+                            <a href="{{ url('index_deconnexion') }}">
+                                <button type="button" class="btn btn-IC btn-outline-light">Déconnexion</button>
+                            </a>
+                        {% else %}
+                            <a href="{{ url('index_inscription') }}">
+                                <button type="button" class="btn btn-IC btn-outline-light">Inscription</button>
+                            </a>
+                            <a href="{{ url('index_connexion') }}">
+                                <button type="button" class="btn btn-IC btn-outline-light">Connexion</button>
+                            </a>
+                        {% endif %}
+                    </div>
+
+                </div>
+                <!-- ENDBLOC D'AUTHENTIFICATION -->
+            </div>
+        </div>
+    </header>
+    <!-- ENDBLOC HEADER -->
+    <div class="blocd container">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Cherche ton meme...</span>
+            </div>
+            <input id="search" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Entrez votre recherche..."><button class="search-btn"><a href=""><i class="fas fa-search"></i></a></button>
+        </div>
+        <ul class="list-group" id="result"></ul>
+    </div>
+    <div id="imgContainer" class="container blocc">
+
+    </div>
+
+    {% include 'inc/footer.html' %}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type= text/javascript src="{{ asset('assets/js/random.js') }}"></script>
+    <script type= text/javascript src="{{ asset('assets/js/recherche.js') }}"></script>
+
+{% endblock %}
