@@ -5,7 +5,7 @@
 
 {# Block de Contenu défini dans base.html.twig #}
 {% block contenu %}
-
+    <!-- BLOC HEADER -->
     <header class="header">
         <div class="blocb container-fluid">
             <div class="row">
@@ -14,8 +14,10 @@
                 </div>
                 <div class="col-md-3">
                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <!-- BLOC DE ROLE -->
                     <p class="text-center role">Bonjour {{ app.user.PRENOMMEMBRE }}</p>
                     <p class="text-center role"><i class="far fa-hand-point-right"></i>
+                    <!-- ENDBLOC DE ROLE -->
                         {% if is_granted('ROLE_ADMIN') %}
                             Administrateur
                         {% elseif is_granted('ROLE_MEMBRE') %}
@@ -26,13 +28,16 @@
                 <div class="col-md-2">
 
                     {% if is_granted('ROLE_ADMIN') %}
+                    <!-- BLOC OPEN GESTION ADMIN -->
                         <a href="{{ url('admin_admin') }}">
                             <button type="button" class="btn btn-Admin btn-IC btn-outline-light">Admin</button>
                         </a>
+                    <!-- ENDBLOC OPEN GESTION ADMIN -->
                     {% endif %}
 
                     {% endif %}
                 </div>
+                <!-- BLOC D'AUTHENTIFICATION -->
                 <div class="col-xs-4">
                     <div class="bouttons-right">
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
@@ -53,9 +58,11 @@
                     </div>
 
                 </div>
+                <!-- ENDBLOC D'AUTHENTIFICATION -->
             </div>
         </div>
     </header>
+    <!-- ENDBLOC HEADER -->
     <div class="blocd container">
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -65,7 +72,6 @@
         </div>
         <ul class="list-group" id="result"></ul>
     </div>
-    <div class="blocedit text-center"><a href="edit/{id}"><button type="button" class="btn btnEdit btn-lg btn-outline-dark">Editer une image</button></a></div>
     <div id="imgContainer" class="container blocc">
 
     </div>

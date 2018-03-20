@@ -18,21 +18,25 @@
     <img class="imgConnect img-responsive" src="{{ asset('assets/images/logo2.png') }}">
 </center>
 {% if error %}
+    <!-- BLOC ERROR CONNEXION -->
     <div class="alert alert-danger imgconnect">
         <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
         {{ error | replace({"Bad credentials." : "Identifiant et/ou mot de passe incorrect."}) }}
     </div>
+    <!-- ENDBLOC ERROR CONNEXION -->
 {% endif %}
 
 {% if global.request.get('inscription') == 'success' %}
+        <!-- BLOC DE SUCCES INSCRIPTION -->
     <div class="alert alert-success">
         <p class="text-center"><i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i></p>
         <p class="text-center">Félicitation, votre inscription est effective.
             <br>Vous pouvez maintenant vous connecter.</p>
     </div>
+        <!-- ENDBLOC DE SUCCES INSCRIPTION -->
 {% endif %}
 
-
+        <!-- BLOC CONNEXION -->
 <form action="{{ url('connexion_login_check') }}" method="POST" class="form-horizontal container">
 
     <div class="form-group">
@@ -47,7 +51,7 @@
     <input type="submit" class="btn btn-block btn-outline-dark" value="Me connecter !">
 
 </form>
-
+        <!-- BLOC CONNEXION -->
     {% include 'inc/footer.html' %}
 
 {% endblock %}
