@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Editer votre image{% endblock %}
+{% block title %}Administration{% endblock %}
 
 {% block contenu %}
 
@@ -14,7 +14,7 @@
 
                     <div class="bouttons right">
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                            <a href="{{ url('index_membre') }}"><button type="button" class="btn btn-outline-light">Mon compte</button></a>
+                            <a href="{{ url('index_edit') }}"><button type="button" class="btn btn-outline-light">Mon compte</button></a>
                             <a href="{{ url('index_deconnexion') }}"><button type="button" class="btn btn-outline-light">Déconnexion</button></a>
                         {% else %}
                             <a href="{{ url('index_inscription') }}"><button type="button" class="btn btn-outline-light">Inscription</button></a>
@@ -27,26 +27,7 @@
         </div>
     </header>
 
-    <div class="edit">
-        <img src="{{ url }}" style="width: {{ width }}px; height: {{ height }}px;" id="meme">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8" id="prev  iew"></div>
-                <div class="col-md-4">
-                    <button class="btn btn-success" id="save">Save</button>
-                    <button class="btn btn-danger" id="download">Download</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     {% include 'inc/footer.html' %}
-
-{% endblock %}
-
-{% block javascripts %}
-     {{ parent() }}
-    <script src="{{ asset('assets/js/edit.js') }}"></script>
 
 {% endblock %}

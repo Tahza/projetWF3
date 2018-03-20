@@ -26,7 +26,7 @@ class IndexControllerProvider implements ControllerProviderInterface {
                 ->bind('index_index');
 
             $controllers
-                ->get('/edit', 'App\Controller\IndexController::editAction')
+                ->get('/edit/{id}', 'App\Controller\IndexController::editAction')
                 ->bind('index_edit');
 
             $controllers
@@ -34,7 +34,7 @@ class IndexControllerProvider implements ControllerProviderInterface {
                 ->bind('index_inscription');
 
             $controllers
-                ->get('/inscription', 'App\Controller\IndexController::inscriptionPost')
+                ->post('/inscription', 'App\Controller\IndexController::inscriptionPost')
                 ->bind('index_inscription_post');
 
             $controllers

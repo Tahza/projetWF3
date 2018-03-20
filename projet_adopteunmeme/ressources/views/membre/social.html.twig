@@ -1,0 +1,109 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}
+    Social
+{% endblock %}
+
+{% block contenu %}
+    <header class="header">
+        <div class="blocb container-fluid">
+            <div class="row">
+                <div>
+                    <a href="{{ url('index_index') }}"><img class="logo"
+                                                            src="{{ asset('assets/images/adopte-un-mec.png') }}"></a>
+                </div>
+                <div class="col-md-3">
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+                    <p class="text-center role">Bonjour {{ app.user.PRENOMMEMBRE }}</p>
+                    <p class="text-center role"><i class="far fa-hand-point-right"></i>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            Administrateur
+                        {% elseif is_granted('ROLE_MEMBRE') %}
+                            Membre
+                        {% endif %}
+                    </p>
+                </div>
+                <div class="col-md-2">
+
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a href="{{ url('admin_admin') }}">
+                            <button type="button" class="btn btn-outline-light">Admin</button>
+                        </a>
+                    {% endif %}
+
+                    {% endif %}
+                </div>
+                <div class="col-xs-4">
+                    <div class="bouttons right">
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            <a href="{{ url('index_membre') }}">
+                                <button type="button" class="btn btn-outline-light">Mon compte</button>
+                            </a>
+                            <a href="{{ url('index_deconnexion') }}">
+                                <button type="button" class="btn btn-outline-light">Déconnexion</button>
+                            </a>
+                        {% else %}
+                            <a href="{{ url('index_inscription') }}">
+                                <button type="button" class="btn btn-outline-light">Inscription</button>
+                            </a>
+                            <a href="{{ url('index_connexion') }}">
+                                <button type="button" class="btn btn-outline-light">Connexion</button>
+                            </a>
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <form class="form-horizontal" method="POST"
+              enctype="multipart/form-data">
+            <h3>Ajouter vos reseaux sociaux</h3>
+
+            {# Facebook #}
+            <div class="form-group">
+                <label class="control-label">Facebook</label>
+                <div>
+                    {{ form_row(form.FACEBOOK) }}
+                </div>
+            </div>
+
+            {# Twitter #}
+            <div class="form-group">
+                <label class="control-label">Twitter</label>
+                <div>
+                    {{ form_row(form.TWITTER) }}
+                </div>
+            </div>
+
+            {# Google #}
+            <div class="form-group">
+                <label class="control-label">Google</label>
+                <div>
+                    {{ form_row(form.GOOGLE) }}
+                </div>
+            </div>
+            {# IMPORTANT POUR LA VALIDATION DU TOKEN CSRF #}
+            {{ form_row(form._token) }}
+
+            {# Submit #}
+            <div class="form-group">
+                <div>
+                    <button type="submit" class="btn btn-dark"
+                            value="Publier">Ajouter
+                    </button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    </div>
+
+
+    {% include 'inc/footer.html' %}
+
+{% endblock %}

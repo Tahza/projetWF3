@@ -10,14 +10,12 @@
 }
 .blocb {
     background-color: black;
-    height: 100px;
     box-shadow: lightslategrey 9px 4px 38px;
 }
 .blocc {
     border-radius: 10px;
     background-color: #ffffff;
     border: 1px solid #00000059;
-    height: 800px;
     width: 90%;
     box-shadow: #00000061 0px 0px 18px;
 }
@@ -26,7 +24,7 @@
 }
 .logo {
     height: 7em;
-    width: 21em;
+    width: 20em;
 }
 button {
     height: 3em;
@@ -59,12 +57,11 @@ button {
 }
 .bloce {
     background-color: #989898;
-    height: 13em;
     box-shadow: #00000091 0px 0px 70px;
 }
 .blocf {
     background-color: black;
-    height: 25px;
+    height: 100%;
 }
 .blocg {
     margin-top: 10px;
@@ -93,4 +90,157 @@ button {
 .btn.btn-lg.btn-outline-dark:hover {
     background-color: black;
     color: white;
+}
+form.form-horizontal.container {
+    margin-top: 4em;
+    margin-bottom: 2em;
+    width: 50%;
+}
+.imgconnect {
+    display: block;
+    margin: auto;
+    width: 34em;
+    margin-top: 2em;
+}
+
+.search-btn i {
+    color: black;
+}
+
+.copyright {
+    color: white;
+    text-align: right;
+    margin-right: 15px;
+    padding-top: 1em;
+}
+
+.role {
+    font-size: 20px;
+    margin-top: 0.52em;
+    color: white;
+}
+
+.social{
+    width: 200px;
+    height: 200px;
+}
+
+.containerp {
+    margin-top: 10px;
+}
+
+.social {
+    font-size: 25px;
+}
+
+.info {
+    font-size: 30px;
+}
+
+.addsocial {
+    font-size: 13px;
+}
+
+.list-group-item-action {
+    list-style: none;
+    background-color: white;
+}
+
+#lien {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+.imgAccueil {
+    width: 170px;
+    height: 120px;
+    margin: 7px;
+    border: 1px solid;
+}
+
+.imgAccueil:hover {
+    transition: 0.5s;
+    transform: scale(1.05);
+}
+
+a {
+    color: black;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 767px) {
+    .imgInscription {
+        width: 100%;
+    }
+
+    .image1 {
+        height: 12em;
+        position: relative;
+    }
+
+    .image2 {
+        top: 18px;
+        height: 11em;
+        position: relative;
+    }
+
+    .btnEdit {
+        width: 100% !important;
+    }
+
+    .imgAccueil {
+        width: 46%;
+        margin: 6px;
+    }
+
+    .input-group-prepend {
+        display: none;
+    }
+
+    .btn-IC {
+        position: relative;
+        bottom: 26px;
+        left: 106px;
+    }
+
+
+    .imgConnect {
+        width: 100%;
+    }
+
+}
+
+@media screen and (min-width: 767px) and (max-width: 992px) {
+    .imgAccueil {
+        width: 200px;
+        height: 210px;
+        margin: 9px;
+    }
+
+    .imgInscription {
+        width: 100%;
+    }
+
+    .imgConnect {
+        width: 100%;
+    }
+
+    .btn-Admin {
+        width: 100%;
+    }
+
+}
+
+@media screen and (min-width: 360px) and (max-width: 640px) {
+    .imgAccueil {
+        width: 45%;
+        margin: 7px;
+    }
+
+    .logo {
+        margin-left: 23px;
+    }
+
 }

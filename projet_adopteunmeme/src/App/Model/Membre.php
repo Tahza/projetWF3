@@ -28,13 +28,13 @@ class Membre implements UserInterface
      */
     public function __construct($IDMEMBRE, $NOMMEMBRE, $PRENOMMEMBRE, $EMAILMEMBRE, $MDPMEMBRE, $ROLEMEMBRE, $DATEINSCRIPTION)
     {
-        $this->IDMEMBRE         = $IDMEMBRE;
-        $this->NOMMEMBRE        = $NOMMEMBRE;
-        $this->PRENOMMEMBRE     = $PRENOMMEMBRE;
-        $this->EMAILMEMBRE      = $EMAILMEMBRE;
-        $this->MDPMEMBRE        = $MDPMEMBRE;
-        $this->ROLEMEMBRE       = $ROLEMEMBRE;
-        $this->DATEINSCRIPTION  = $DATEINSCRIPTION;
+        $this->IDMEMBRE             = $IDMEMBRE;
+        $this->NOMMEMBRE            = $NOMMEMBRE;
+        $this->PRENOMMEMBRE         = $PRENOMMEMBRE;
+        $this->EMAILMEMBRE          = $EMAILMEMBRE;
+        $this->MDPMEMBRE            = $MDPMEMBRE;
+        $this->ROLEMEMBRE[]         = $ROLEMEMBRE;
+        $this->DATEINSCRIPTION      = $DATEINSCRIPTION;
     }
 
     /**
@@ -72,7 +72,7 @@ class Membre implements UserInterface
     /**
      * @return mixed
      */
-    public function getMDPMEMBRE()
+    public function getPassword()
     {
         return $this->MDPMEMBRE;
     }
@@ -80,7 +80,7 @@ class Membre implements UserInterface
     /**
      * @return mixed
      */
-    public function getROLEMEMBRE()
+    public function getRoles()
     {
         return $this->ROLEMEMBRE;
     }
