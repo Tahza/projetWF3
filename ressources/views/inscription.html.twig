@@ -1,45 +1,54 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Editer votre image{% endblock %}
+{% block title %}Inscription{% endblock %}
 
 {% block contenu %}
 
     <header class="header">
         <div class="blocb container-fluid">
             <div class="row">
+                <!-- BLOC LOGO -->
                 <div class="col-md-8">
-                    <a href="{{ url('index_index') }}"><img alt="logo" class="logo" src="{{ asset('assets/images/adopte-un-mec.png') }}"></a>
+                    <a href="{{ url('index_index') }}"><img class="logo" src="{{ asset('assets/images/adopte-un-mec.png') }}"></a>
                 </div>
+                <!-- ENDBLOC LOGO -->
             </div>
         </div>
     </header>
-
+                <!-- BLOC INSCRIPTION -->
     <center>
-        <img alt="we want you" class="imgconnect img-responsive" src="{{ asset('assets/images/WE-WANT-YOU.png') }}">
+        <img class="imgInscription img-responsive" src="{{ asset('assets/images/WE-WANT-YOU.png') }}">
     </center>
-    <form  method="POST" class="form-horizontal container">
+    {% if error is defined %}
+        <div class="alert alert-danger">
+            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+            {{ error }}
+        </div>
+    {% endif %}
+    <form action="{{ url('index_inscription_post') }}" method="POST" class="form-horizontal container">
 
         <div class="form-group">
             <div class="col-xs-6">
-                <input class="form-control" required type="text" id="PRENOMAUTEUR" name="PRENOMAUTEUR" placeholder="Saisissez votre prenom">
+                <input class="form-control" required type="text" id="PRENOMMEMBRE" name="PRENOMMEMBRE" placeholder="Saisissez votre prenom">
             </div>
             <div class="col-xs-6">
-                <input class="form-control"  id="NOMAUTEUR" name="NOMAUTEUR" required type="text" placeholder="Saisissez votre nom">
+                <input class="form-control"  id="NOMMEMBRE" name="NOMMEMBRE" required type="text" placeholder="Saisissez votre nom">
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-xs-6">
-                <input class="form-control" required type="text" id="EMAILAUTEUR" name="EMAILAUTEUR" placeholder="Saisissez votre email">
+                <input class="form-control" required type="email" id="EMAILMEMBRE" name="EMAILMEMBRE" placeholder="Saisissez votre email">
             </div>
             <div class="col-xs-6">
-                <input class="form-control"  id="MDPAUTEUR" name="MDPAUTEUR" required type="text" placeholder="*******">
+                <input class="form-control"  id="MDPMEMBRE" name="MDPMEMBRE" required type="password" placeholder="*******">
             </div>
         </div>
 
         <input type="submit" class="btn btn-block btn-outline-dark" value="M'inscrire !">
 
     </form>
+                <!-- ENDBLOC INSCRIPTION -->
 
     {% include 'inc/footer.html' %}
 

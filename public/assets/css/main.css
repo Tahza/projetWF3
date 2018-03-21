@@ -1,4 +1,5 @@
-﻿.container-fluid {
+﻿/*------ BODY ------*/
+.container-fluid {
     padding-left: 0px;
     padding-right: 0px;
 }
@@ -8,30 +9,56 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+.row {
+    margin-right: 0;
+}
+/*------ FIN BODY ------*/
+/*------ HEADER ------*/
 .blocb {
     background-color: black;
-    height: 100px;
     box-shadow: lightslategrey 9px 4px 38px;
 }
+.logo {
+    height: 7em;
+    width: 20em;
+}
+button {
+    height: 3em;
+    width: 48%;
+    margin-top: 30px;
+}
+.role {
+    font-size: 20px;
+    margin-top: 0.52em;
+    color: white;
+}
+/*------ FIN HEADER ------*/
+/*------ CONTENU ------*/
 .blocc {
     border-radius: 10px;
     background-color: #ffffff;
     border: 1px solid #00000059;
-    height: 800px;
     width: 90%;
     box-shadow: #00000061 0px 0px 18px;
 }
 .blocd {
     margin-top: 25px;
 }
-.logo {
-    height: 7em;
-    width: 21em;
+
+.imgAccueil {
+    width: 170px;
+    height: 120px;
+    margin: 7px;
+    border: 1px solid;
 }
-button {
-    height: 3em;
-    width: 48%;
-    margin-top: 30px;
+
+.imgAccueil:hover {
+    transition: 0.5s;
+    transform: scale(1.05);
+}
+
+a {
+    color: black;
 }
 .input-group-text {
     border: 1px solid black;
@@ -42,9 +69,7 @@ button {
 .input-group.mb-3 {
     border-radius: 8px;
 }
-.row {
-    margin-right: 0;
-}
+
 .btn.btn-outline-light {
     font-weight: bold;
 }
@@ -57,14 +82,68 @@ button {
 .search-btn i {
     color: black;
 }
+#lien {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+.social{
+    width: 200px;
+    height: 200px;
+}
+
+.containerp {
+    margin-top: 10px;
+}
+
+.social {
+    font-size: 25px;
+}
+
+.info {
+    font-size: 30px;
+}
+
+.addsocial {
+    font-size: 13px;
+}
+.imgconnect {
+    display: block;
+    margin: auto;
+    width: 34em;
+    margin-top: 2em;
+}
+.btn.btn-lg.btn-outline-dark {
+    margin-bottom: 23px;
+    width: 20em;
+    margin-top: 10px;
+    color: black;
+}
+.btn.btn-lg.btn-outline-dark:hover {
+    background-color: black;
+    color: white;
+}
+form.form-horizontal.container {
+    margin-top: 4em;
+    margin-bottom: 2em;
+    width: 50%;
+}
+.search-btn i {
+    color: black;
+}
+.list-group-item-action {
+    list-style: none;
+    background-color: white;
+}
+/*------ FIN CONTENU ------*/
+/*------ FOOTER ------*/
 .bloce {
     background-color: #989898;
-    height: 13em;
     box-shadow: #00000091 0px 0px 70px;
 }
 .blocf {
     background-color: black;
-    height: 25px;
+    height: 100%;
 }
 .blocg {
     margin-top: 10px;
@@ -84,13 +163,88 @@ button {
     font-size: 30px;
     vertical-align: -6px;
 }
-.btn.btn-lg.btn-outline-dark {
-    margin-bottom: 23px;
-    width: 20em;
-    margin-top: 10px;
-    color: black;
-}
-.btn.btn-lg.btn-outline-dark:hover {
-    background-color: black;
+.copyright {
     color: white;
+    text-align: right;
+    margin-right: 15px;
+    padding-top: 1em;
+}
+
+/*------ FIN FOOTER ------*/
+
+/* Media Queries */
+
+@media screen and (max-width: 767px) {
+    .imgInscription {
+        width: 100%;
+    }
+
+    .image1 {
+        height: 12em;
+        position: relative;
+    }
+
+    .image2 {
+        top: 18px;
+        height: 11em;
+        position: relative;
+    }
+
+    .btnEdit {
+        width: 100% !important;
+    }
+
+    .imgAccueil {
+        width: 46%;
+        margin: 6px;
+    }
+
+    .input-group-prepend {
+        display: none;
+    }
+
+    .btn-IC {
+        position: relative;
+        bottom: 26px;
+        left: 106px;
+    }
+
+
+    .imgConnect {
+        width: 100%;
+    }
+
+}
+
+@media screen and (min-width: 767px) and (max-width: 992px) {
+    .imgAccueil {
+        width: 200px;
+        height: 210px;
+        margin: 9px;
+    }
+
+    .imgInscription {
+        width: 100%;
+    }
+
+    .imgConnect {
+        width: 100%;
+    }
+
+    .btn-Admin {
+        width: 100%;
+    }
+
+}
+
+@media screen and (min-width: 360px) and (max-width: 640px) {
+    .imgAccueil {
+        width: 45%;
+        margin: 7px;
+    }
+
+    .logo {
+        margin-left: 23px;
+    }
+
 }

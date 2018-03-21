@@ -1,5 +1,7 @@
 $(".edit img").memeGenerator({
     useBootstrap: true,
+    showAdvancedSettings: false,
+    dragResizeEnabled: true,
     layout: "horizontal",
     previewMode: "canvas"
 });
@@ -15,7 +17,7 @@ $("#save").click(function(e){
 });
 
 
-$.fn.memeGenerator("i18n", "pl", {
+$.fn.memeGenerator("i18n", "fr", {
     topTextPlaceholder: "Text haut",
     bottomTextPlaceholder: "Texte bas",
 
