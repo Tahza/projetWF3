@@ -61,10 +61,12 @@ a {
     color: black;
 }
 .input-group-text {
+    font-family: 'Bitter', serif;
     border: 1px solid black;
     background-color: black;
     color: #fefefe;
     font-weight: bold;
+
 }
 .input-group.mb-3 {
     border-radius: 8px;
@@ -72,6 +74,7 @@ a {
 
 .btn.btn-outline-light {
     font-weight: bold;
+    font-family: 'Bitter', serif;
 }
 .search-btn {
     width: 50px;
@@ -156,20 +159,29 @@ form.form-horizontal.container {
     float: right;
 }
 .ment {
+    font-family: 'Bitter', serif;
     text-align: center;
     margin-top: 15px;
+    font-weight: 600;
 }
 .imail {
     font-size: 30px;
     vertical-align: -6px;
 }
 .copyright {
+    font-family: 'Bitter', serif;
     color: white;
     text-align: right;
     margin-right: 15px;
     padding-top: 1em;
 }
-
+.ment span {
+    color: white;
+    font-size: 20px;
+}
+a img {
+    margin-bottom: 10px;
+}
 /*------ FIN FOOTER ------*/
 
 /* Media Queries */
